@@ -15,11 +15,9 @@ notes.delete("/:id", async (req, res) => {
   const noteId = req.params.id;
   console.log(noteId);
   let data = await fs.promises.readFile("./db/db.json", "utf-8");
-  let parsedData = res.json(JSON.parse(data));
-  console.log("parsed data in delete");
-  console.log(parsedData);
+  let parsedNotes = [].concat(JSON.parse(data));
   // Make a new array of all notes except the one with the ID provided in the URL
-  let result = await parsedData.filter((note) => note.id !== noteId);
+  let result = await parsedNotes.filter((note) => note.id !== noteId);
   console.log("result in delete");
   console.log(result);
   fs.writeFile("./db/db.json", JSON.stringify(result, null, 4), (err) =>
