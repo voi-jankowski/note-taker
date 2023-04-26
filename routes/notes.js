@@ -27,7 +27,6 @@ notes.delete("/:id", async (req, res) => {
 
 // POST Route for a new note
 notes.post("/", async (req, res) => {
-  console.log(req.body);
   //    Make the values in the object of the new note available
   const { title, text } = req.body;
   //   And create new object with the unique id

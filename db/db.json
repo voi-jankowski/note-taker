@@ -1,12 +1,17 @@
 [
     {
-        "title": "Test Title",
-        "text": "Test text",
-        "id": "1"
-    },
-    {
         "title": "Cook lunch",
         "text": "There is a fish in the fridge that needs using\n",
         "id": "5aecfe77-16cd-4a5b-a929-429f047df2ec"
+    },
+    {
+        "title": "Collect speaker",
+        "text": "Drive to Peter Electronics to collect the speaker\n",
+        "id": "108d1092-4c32-4618-876c-937116511df5"
+    },
+    {
+        "title": "Trim the tree",
+        "text": "The lower branches have to be removed",
+        "id": "b1e5dc27-f257-48ce-9b4a-3557d703a104"
     }
 ]
