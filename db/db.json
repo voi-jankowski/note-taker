@@ -1,12 +1,12 @@
 [
-  {
-    "title": "Test Title",
-    "text": "Test text",
-    "id": "1"
-  },
-  {
-    "title": "New Note",
-    "text": "This is a test note",
-    "id": "2"
-  }
+    {
+        "title": "Test Title",
+        "text": "Test text",
+        "id": "1"
+    },
+    {
+        "title": "Cook lunch",
+        "text": "There is a fish in the fridge that needs using\n",
+        "id": "5aecfe77-16cd-4a5b-a929-429f047df2ec"
+    }
 ]
