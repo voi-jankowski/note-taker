@@ -1,7 +1,9 @@
 const notes = require("express").Router();
 
 // GET Route for retrieving the notes
-notes.get("/", (req, res) => {});
+notes.get("/", (req, res) => {
+    readFromFile("./db/db.json").then((data) => res.json(JSON.parse(data)));
+});
 
 // DELETE Route for a specific note
 notes.delete("/:id", (req, res) => {});
