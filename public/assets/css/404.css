@@ -1,24 +1,27 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:300');
-body{
-  background: #3498DB;
+/* The template for 404 error created by Marco Peretto and sourced from https://dev.to/stackfindover/35-html-404-page-templates-5bge */
+
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300");
+body {
+  background: #3498db;
   color: #fff;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 16px;
 }
-h1{
+h1 {
   font-size: 30vh;
 }
-h2 span{
+h2 span {
   font-size: 4rem;
   font-weight: 600;
 }
-a:link, a:visited{
+a:link,
+a:visited {
   text-decoration: none;
   color: #fff;
 }
-h3 a:hover{
+h3 a:hover {
   text-decoration: none;
   background: #fff;
-  color: #3498DB;
+  color: #3498db;
   cursor: pointer;
 }
