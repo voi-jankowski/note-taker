@@ -1,5 +1,6 @@
 const notes = require("express").Router();
 const fs = require("fs");
+const { v4: uuidv4 } = require("uuid");
 
 // GET Route for retrieving the notes
 notes.get("/", async (req, res) => {
@@ -14,6 +15,8 @@ notes.delete("/:id", async (req, res) => {
   const noteId = req.params.id;
   let data = await fs.promises.readFile("./db/db.json", "utf-8");
   let parsedData = await res.json(JSON.parse(data));
+  console.log("parsed data in delete");
+  console.log(parsedData);
   let result = await parsedData.filter((note) => note.id !== noteId);
   fs.writeFile("./db/db.json", JSON.stringify(result, null, 4), (err) =>
     err ? console.error(err) : console.info(`\nData written to db.json`)
@@ -34,7 +37,25 @@ notes.delete("/:id", async (req, res) => {
 });
 
 // POST Route for a new note
-notes.post("/", (req, res) => {
+notes.post("/", async (req, res) => {
   console.log(req.body);
+  const { title, text } = req.body;
+  try {
+    const newNote = {
+      title,
+      text,
+      id: uuidv4(),
+    };
+
+    let data = await fs.promises.readFile("./db/db.json", "utf-8");
+    let parsedData = JSON.parse(data);
+    parsedData.push(newNote);
+    fs.writeFile("./db/db.json", JSON.stringify(parsedData, null, 4), (err) =>
+      err ? console.error(err) : console.info(`\nData written to db.json`)
+    );
+    res.json(`Note added successfully!`);
+  } catch (error) {
+    res.error("Error in adding tip");
+  }
 });
 module.exports = notes;
